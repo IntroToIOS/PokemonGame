@@ -50,7 +50,9 @@ static inline CGPoint rwNormalize(CGPoint a) {
     self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     self.ash = [SKSpriteNode spriteNodeWithImageNamed:@"ash"];
     //self.ash.position = CGPointMake(500, 400);
-    self.ash.position = CGPointMake(self.ash.size.width/2, self.frame.size.height/2);
+	
+	float rand = random()/RAND_MAX;
+    self.ash.position = CGPointMake(self.ash.size.width/2*rand, self.frame.size.height/2*rand);
     [self addChild:self.ash];
 
 }
