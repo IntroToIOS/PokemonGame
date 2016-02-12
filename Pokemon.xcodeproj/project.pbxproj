@@ -17,6 +17,7 @@
 		347815441C6D7C1A00DDC5BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347815421C6D7C1A00DDC5BC /* LaunchScreen.storyboard */; };
 		3478154F1C6D7C1A00DDC5BC /* PokemonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3478154E1C6D7C1A00DDC5BC /* PokemonTests.m */; };
 		3478155A1C6D7C1A00DDC5BC /* PokemonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 347815591C6D7C1A00DDC5BC /* PokemonUITests.m */; };
+		3478156A1C6E651F00DDC5BC /* pokemonsprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 347815691C6E651F00DDC5BC /* pokemonsprites.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		347815551C6D7C1A00DDC5BC /* PokemonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		347815591C6D7C1A00DDC5BC /* PokemonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonUITests.m; sourceTree = "<group>"; };
 		3478155B1C6D7C1A00DDC5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		347815691C6E651F00DDC5BC /* pokemonsprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = pokemonsprites.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		3478152E1C6D7C1A00DDC5BC /* Pokemon */ = {
 			isa = PBXGroup;
 			children = (
+				347815691C6E651F00DDC5BC /* pokemonsprites.atlas */,
 				347815321C6D7C1A00DDC5BC /* AppDelegate.h */,
 				347815331C6D7C1A00DDC5BC /* AppDelegate.m */,
 				347815351C6D7C1A00DDC5BC /* GameScene.h */,
@@ -254,6 +257,7 @@
 				347815391C6D7C1A00DDC5BC /* GameScene.sks in Resources */,
 				347815441C6D7C1A00DDC5BC /* LaunchScreen.storyboard in Resources */,
 				347815411C6D7C1A00DDC5BC /* Assets.xcassets in Resources */,
+				3478156A1C6E651F00DDC5BC /* pokemonsprites.atlas in Resources */,
 				3478153F1C6D7C1A00DDC5BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
