@@ -8,12 +8,31 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+@import AVFoundation;
+
+@interface GameViewController ()
+@property (nonatomic) AVAudioPlayer * backgroundMusicPlayer;
+@end
 
 @implementation GameViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    //////////////////
+    // Background music
+    //////////////////
+    
+    NSError *error;
+    NSURL * backgroundMusicURL = [[NSBundle mainBundle] URLForResource:@"theme" withExtension:@"mp3"];
+    
+    NSLog(@"%@", backgroundMusicURL);
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    self.backgroundMusicPlayer.numberOfLoops = -1;
+    [self.backgroundMusicPlayer prepareToPlay];
+    [self.backgroundMusicPlayer play];
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;

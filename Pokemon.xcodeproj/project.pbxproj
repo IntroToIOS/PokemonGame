@@ -18,6 +18,8 @@
 		3478154F1C6D7C1A00DDC5BC /* PokemonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3478154E1C6D7C1A00DDC5BC /* PokemonTests.m */; };
 		3478155A1C6D7C1A00DDC5BC /* PokemonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 347815591C6D7C1A00DDC5BC /* PokemonUITests.m */; };
 		3478156A1C6E651F00DDC5BC /* pokemonsprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 347815691C6E651F00DDC5BC /* pokemonsprites.atlas */; };
+		34D641B81C6F09F800D66C50 /* theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34D641B71C6F09F800D66C50 /* theme.mp3 */; };
+		34D641BA1C6F0B1700D66C50 /* pika.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34D641B91C6F0B1700D66C50 /* pika.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		347815591C6D7C1A00DDC5BC /* PokemonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokemonUITests.m; sourceTree = "<group>"; };
 		3478155B1C6D7C1A00DDC5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		347815691C6E651F00DDC5BC /* pokemonsprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = pokemonsprites.atlas; sourceTree = "<group>"; };
+		34D641B71C6F09F800D66C50 /* theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = theme.mp3; sourceTree = "<group>"; };
+		34D641B91C6F0B1700D66C50 /* pika.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pika.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		3478152E1C6D7C1A00DDC5BC /* Pokemon */ = {
 			isa = PBXGroup;
 			children = (
+				34D641B41C6F097300D66C50 /* Resources */,
 				347815691C6E651F00DDC5BC /* pokemonsprites.atlas */,
 				347815321C6D7C1A00DDC5BC /* AppDelegate.h */,
 				347815331C6D7C1A00DDC5BC /* AppDelegate.m */,
@@ -149,6 +154,15 @@
 				3478155B1C6D7C1A00DDC5BC /* Info.plist */,
 			);
 			path = PokemonUITests;
+			sourceTree = "<group>";
+		};
+		34D641B41C6F097300D66C50 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34D641B91C6F0B1700D66C50 /* pika.wav */,
+				34D641B71C6F09F800D66C50 /* theme.mp3 */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +270,10 @@
 			files = (
 				347815391C6D7C1A00DDC5BC /* GameScene.sks in Resources */,
 				347815441C6D7C1A00DDC5BC /* LaunchScreen.storyboard in Resources */,
+				34D641BA1C6F0B1700D66C50 /* pika.wav in Resources */,
 				347815411C6D7C1A00DDC5BC /* Assets.xcassets in Resources */,
 				3478156A1C6E651F00DDC5BC /* pokemonsprites.atlas in Resources */,
+				34D641B81C6F09F800D66C50 /* theme.mp3 in Resources */,
 				3478153F1C6D7C1A00DDC5BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +530,7 @@
 				347815601C6D7C1A00DDC5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		347815611C6D7C1A00DDC5BC /* Build configuration list for PBXNativeTarget "PokemonTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +539,7 @@
 				347815631C6D7C1A00DDC5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		347815641C6D7C1A00DDC5BC /* Build configuration list for PBXNativeTarget "PokemonUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +548,7 @@
 				347815661C6D7C1A00DDC5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

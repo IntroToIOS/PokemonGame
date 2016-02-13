@@ -10,6 +10,8 @@
 
 @interface GameScene () <SKPhysicsContactDelegate>
 @property (nonatomic) SKSpriteNode * ash;
+
+// Keep track of time between spawns
 @property (nonatomic) NSTimeInterval lastSpawnTimeInterval;
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 @end
@@ -46,51 +48,59 @@ static inline CGPoint rwNormalize(CGPoint a) {
     self.physicsWorld.gravity = CGVectorMake(0,0);
     self.physicsWorld.contactDelegate = self;
     
+    ////////////////
+    // Add a sprite to the page
+    ////////////////
     NSLog(@"Adding Ash");
     self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     self.ash = [SKSpriteNode spriteNodeWithImageNamed:@"ash"];
     //self.ash.position = CGPointMake(500, 400);
-	
-	float rand = random()/RAND_MAX;
-    self.ash.position = CGPointMake(self.ash.size.width/2*rand, self.frame.size.height/2*rand);
+    self.ash.position = CGPointMake(self.ash.size.width/2, self.frame.size.height/2);
     [self addChild:self.ash];
+    
 
 }
 
 - (void)addPokemon {
-    NSLog(@"Add Pokemon");
+    
+    //////////////
+    // A method to spawn a new sprite
+    // - We will call this whenever we want a new Pikachu to show up
+    //////////////
     
     // Create sprite
     SKSpriteNode * pokemon = [SKSpriteNode spriteNodeWithImageNamed:@"pikachu"];
-    
 
+    // Randomize spawn location on edge of screen
     int minY = pokemon.size.height / 2;
     int maxY = self.frame.size.height - pokemon.size.height / 2;
     int rangeY = maxY - minY;
     int actualY = minY + (arc4random() % rangeY);
-    
-
-    pokemon.position = CGPointMake(self.frame.size.width + pokemon.size.width/2, actualY);
+    pokemon.position = CGPointMake(self.frame.size.width, actualY);
     [self addChild:pokemon];
-    
+
     pokemon.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pokemon.size];
     pokemon.physicsBody.dynamic = YES;
     pokemon.physicsBody.categoryBitMask = pokemonCategory;
     pokemon.physicsBody.contactTestBitMask = pokeballCategory;
     pokemon.physicsBody.collisionBitMask = 0;
-    
+
+    // Randomize speed of pikachus
     int minDuration = 2.0;
     int maxDuration = 4.0;
     int rangeDuration = maxDuration - minDuration;
     int actualDuration = (arc4random() % rangeDuration) + minDuration;
     
-
+    // Move the pikachus
     SKAction * actionMove = [SKAction moveTo:CGPointMake(-pokemon.size.width/2, actualY) duration:actualDuration];
     SKAction * actionMoveDone = [SKAction removeFromParent];
     [pokemon runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
     
 }
 
+//////////////
+// Spawn a pikachu every second
+//////////////
 - (void)updateWithTimeSinceLastUpdate:(CFTimeInterval)timeSinceLast {
     self.lastSpawnTimeInterval += timeSinceLast;
     if (self.lastSpawnTimeInterval > 1) {
@@ -115,6 +125,9 @@ static inline CGPoint rwNormalize(CGPoint a) {
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    // Pikachu sound
+    [self runAction:[SKAction playSoundFileNamed:@"pika.wav" waitForCompletion:NO]];
     
     UITouch * touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
